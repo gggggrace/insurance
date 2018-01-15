@@ -235,6 +235,9 @@
                 success:function(data){
                     console.log(data)
                     $('#success').fadeIn(1000);
+                    setTimeout(function () {
+                        $('#success').fadeOut(1000);
+                    },3000)
                 },error:function(XMLHttpRequest, textStatus, errorThrown){
 
                 }
