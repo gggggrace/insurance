@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no, width=device-width">
+    <!--Set render engine for 360 browser-->
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Page-Enter" content="revealTrans(duration=4.0, transition=22)">
+    <meta http-equiv="Page-Exit" content="revealTrans(duration=4.0, transition=22)">
+    <!--No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!--Add to homescreen for Chrome on Android-->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="贷款">
+    <!--Tile icon for Win8(144x144+tile color)-->
+    <meta name="msapplication-TileColor" content="#0e90d2">
+    <title>住院险免费领取</title>
+    <meta name="Keywords" content="医疗险">
+    <meta name="Description" content="上有老下有小，没有一份医疗险怎么行？">
+    <!--<meta name="sharecontent" data-msg-img="https://manmei.github.io/medical/static/img/120.png" data-msg-title="涨姿势！这些医疗险更适合你！" data-msg-content="上有老下有小，没有一份医疗险怎么行？" data-msg-callBack="" data-line-img="https://manmei.github.io/medical/static/img/120.png" data-line-title="涨姿势！这些医疗险更适合你！" data-line-callBack=""/>-->
+    <link rel="stylesheet" href="../static/style.css">
+    <script type="text/javascript">
+		(function (doc, win) {
+			var docEl = doc.documentElement,
+				resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+				recalc = function () {
+					var clientWidth = docEl.clientWidth;
+					if (!clientWidth) return;
+					if(clientWidth>=640){
+						docEl.style.fontSize = '100px';
+					}else{
+						docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+					}
+				};
+			if (!doc.addEventListener) return;
+			win.addEventListener(resizeEvt, recalc, false);
+			doc.addEventListener('DOMContentLoaded', recalc, false);
+		})(document, window);
+	</script>
+    <!--百度统计代码-->
+    <script type="text/javascript">
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e23e6b56ac6ed9928f8c584e8504fbb5";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+    <!--<div style="display: none">
+        <h3 id="wx-title">涨姿势！这些医疗险更适合你！</h3>
+        <p id="wx-con">上有老下有小，没有一份医疗险怎么行？</p>
+        <p id="wx-img">https://manmei.github.io/medical/static/img/120.png</p>
+        <a href="javascript:;" id="wx-link">https://manmei.github.io/medical/views/medical.html</a>
+    </div>-->
+    <section class="g-index">
+        <div class="m-banner">
+            <img src="../static/img/banner.jpg" alt="">
+        </div>
+        <div class="m-content">
+            <div class="header">
+                <h4>等待期30天后住院可报销住院费用，封顶200元。</h4>
+                <span class="age">（保险有效期6个月）</span>
+            </div>
+            <div class="line"></div>
+            <div class="detail">
+                <div class="title">投保信息</div>
+                <div class="form">
+                    <div class="row">
+                        <div>姓名</div>
+                        <input type="text" placeholder="请输入姓名" class="insureName">
+                    </div>
+                    <div class="row">
+                        <div>手机号码</div>
+                        <input type="text" placeholder="请输入手机号" class="insurePhoneNo" maxlength="11">
+                    </div>
+                    <div class="row">
+                        <div>身份证</div>
+                        <input type="text" placeholder="请输入身份证号" class="insureCertNo" maxlength="18">
+                    </div>
+                    <div class="row">
+                        <div>电子邮箱</div>
+                        <input type="text" placeholder="用于接收电子保单" class="insureMail">
+                    </div>
+                </div>
+                <div class="userAgreement">
+                    <label><img class="checkBox on" src="../static/img/checked.png" alt="">
+                        <!--<input type="checkbox" id="agreement" checked="checked" >-->
+                        本人充分了解并同意 </label><span class="popup policy" name="policy">《投保须知》</span><span class="popup clause" name="clause">《保险条款》</span><span class="popup agreement" name="agreement">《平台服务协议》</span>
+                </div>
+                <div class="tc tips"></div>
+                <div class="tc p20">
+                    <button class="save">免费投保</button>
+                </div>
+            </div>
+        </div>
+        <!--弹窗-->
+        <div id="popup" class="m-popup" style="display: none;">
+            <div class="layershade"></div>
+            <div class="layer_con">
+                <div class="type_box">
+                    <div class="child"></div>
+                    <a class="pop_close" href="javascript:;"><img src="../static/img/close.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <!--成功提示窗-->
+        <div id="success" class="m-popup" style="display: none;">
+            <div class="layershade"></div>
+            <div class="layer_con">
+                <div class="type_box">
+                    <div class="child">投保成功！</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+<script type="text/javascript" src="../static/jquery.min.js"></script>
+<script>
+    $(function () {
+        //协议单选框
+        $(".userAgreement label").unbind("click").click(function (e) {
+            e.stopPropagation();
+            if($(".checkBox").hasClass("on")){
+                $(".checkBox").removeClass("on");
+                $(".checkBox").attr("src","../static/img/check.png");
+                $(".save").attr("disabled","disabled")
+            }else{
+                $(".checkBox").addClass("on");
+                $(".checkBox").attr("src","../static/img/checked.png");
+                $(".save").removeAttr("disabled")
+            }
+        });
+        //协议弹窗
+        $(".popup").click(function () {
+            var name = $(this).attr("name");
+            switch (name)
+            {
+                case "policy":
+                    $('#popup').fadeIn(1000);
+                    $('#popup .child').load("policy.html");
+                    break
+                case "clause":
+                    $('#popup').fadeIn(1000);
+                    $('#popup .child').load("clause.html");
+                    break
+                case "agreement":
+                    $('#popup').fadeIn(1000);
+                    $('#popup .child').load("agreement.html");
+                    break
+            }
+        });
+        //关闭弹窗
+        $('.pop_close').on('click',function () {
+            $('.m-popup').fadeOut();
+        });
+        //投保
+        $(".save").click(function () {
+            $(".tips").text("");
+            //orderId
+            var date = new Date();
+            var y = date.getFullYear();
+            var M = (date.getMonth()+1)>9?(date.getMonth()+1):("0"+(date.getMonth()+1));
+            var r = date.getDate()>9?date.getDate():("0"+date.getDate());
+            var h = date.getHours()>9?date.getHours():("0"+date.getHours());
+            var m = date.getMinutes()>9?date.getMinutes():("0"+date.getMinutes());
+            var s = date.getSeconds()>9?date.getSeconds():("0"+date.getSeconds());
+            var curDate = String(y)+String(M)+String(r)+String(h)+String(m)+String(s);
+            var randomNum="";
+            for(var i=0;i<6;i++)
+            {
+                randomNum+=Math.floor(Math.random()*10);
+            }
+            var orderId= "EC17030039"+curDate+randomNum;
+
+            var insureName = $(".insureName").val();
+            var insureCertNo = $(".insureCertNo").val();
+            var insurePhoneNo = $(".insurePhoneNo").val();
+            var insureMail = $(".insureMail").val();
+            //表单验证————————begin
+            var nameTest =  /[\u4e00-\u9fa5]/g;
+            var telTest = /^((1[3,5,8][0-9])|(14[5,7])|(17[0,6,7,8]))\d{8}$/;
+            var numTest =  /[^\d]/g;
+            var mailTest = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+            if(insureName===""){
+                $(".tips").text("请填写姓名");
+                return false;
+            }else{
+                if(!nameTest.test(insureName)){
+                    $(".tips").text("请正确填写姓名");
+                    return false;
+                }
+            }
+            if(insurePhoneNo===""){
+                $(".tips").text("请填写手机号码");
+                return false;
+            }else{
+                if(!telTest.test(insurePhoneNo)){
+                    $(".tips").text("请正确填写手机号");
+                    return false;
+                }
+            }
+            if(insureCertNo===""){
+                $(".tips").text("请填写身份证号");
+                return false;
+            }else{
+                if(numTest.test(insureCertNo)){
+                    $(".tips").text("请正确填写身份证号");
+                    return false;
+                }
+            }
+            if(insureMail===""){
+                $(".tips").text("请填写电子邮箱");
+                return false;
+            }else{
+                if(!mailTest.test(insureMail)){
+                    $(".tips").text("请正确填写电子邮箱");
+                    return false;
+                }
+            }
+            //表单验证————————end
+            $.ajax({
+                url: "https://backstage91160.implus100.com/service/answern/healthlowfee/insured",
+                async: true,
+                type: "POST",
+                dataType:"json",
+                data: {
+                    "orderId": orderId,
+                    "productNum": "1",
+                    "insureName": insureName,
+                    "insureCertType": "1",
+                    "insureCertNo": insureCertNo,
+                    "insurePhoneNo": insurePhoneNo,
+                    "insureMail":insureMail,
+                    "insuredRelation": "1",
+                    "insuredName": insureName,
+                    "insuredCertType": "1",
+                    "insuredCertNo": insureCertNo,
+                    "insuredPhoneNo": insurePhoneNo,
+                    "insuredMail":insureMail
+                },
+                success:function(data){
+                    console.log(data)
+                    if(data.resultCode==="0"){
+                        $('#success').fadeIn(1000);
+                        $('#success .child').text("投保成功！");
+                    }else if(data.resultCode==="1") {
+                        $('#success').fadeIn(1000);
+                        $('#success .child').text("投保失败！");
+                    }else if(data.resultCode==="100"){
+                        $('#success').fadeIn(1000);
+                        $('#success .child').text("出单中");
+                    }
+                    setTimeout(function () {
+                        $('#success').fadeOut(1000);
+                    },3000)
+                },error:function(XMLHttpRequest, textStatus, errorThrown){
+
+                }
+            });
+        })
+    })
+</script>
