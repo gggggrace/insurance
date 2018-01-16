@@ -46,7 +46,7 @@
         var _hmt = _hmt || [];
         (function() {
             var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?f049e85ee3996559a4b8002d5969c033";
+            hm.src = "https://hm.baidu.com/hm.js?e23e6b56ac6ed9928f8c584e8504fbb5";
             var s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(hm, s);
         })();
@@ -65,8 +65,8 @@
         </div>
         <div class="m-content">
             <div class="header">
-                <h4>等待30天后住院可报销住院费用，封顶200元。</h4>
-                <p class="age">（保险有效期6个月）</p>
+                <h4>等待期30天后住院可报销住院费用，封顶200元。</h4>
+                <span class="age">（保险有效期6个月）</span>
             </div>
             <div class="line"></div>
             <div class="detail">
@@ -90,7 +90,9 @@
                     </div>
                 </div>
                 <div class="userAgreement">
-                    <label for="agreement"><input type="checkbox" id="agreement" checked="checked">本人充分了解并同意 </label><span class="popup policy" name="policy">《投保须知》</span><span class="popup clause" name="clause">《保险条款》</span><span class="popup agreement" name="agreement">《平台服务协议》</span>
+                    <label><img class="checkBox on" src="../static/img/checked.png" alt="">
+                        <!--<input type="checkbox" id="agreement" checked="checked" >-->
+                        本人充分了解并同意 </label><span class="popup policy" name="policy">《投保须知》</span><span class="popup clause" name="clause">《保险条款》</span><span class="popup agreement" name="agreement">《平台服务协议》</span>
                 </div>
                 <div class="tc tips"></div>
                 <div class="tc p20">
@@ -114,7 +116,6 @@
             <div class="layer_con">
                 <div class="type_box">
                     <div class="child">投保成功！</div>
-                    <!--<a class="pop_close" href="javascript:;">确定</a>-->
                 </div>
             </div>
         </div>
@@ -124,6 +125,19 @@
 <script type="text/javascript" src="../static/jquery.min.js"></script>
 <script>
     $(function () {
+        //协议单选框
+        $(".userAgreement label").unbind("click").click(function (e) {
+            e.stopPropagation();
+            if($(".checkBox").hasClass("on")){
+                $(".checkBox").removeClass("on");
+                $(".checkBox").attr("src","../static/img/check.png");
+                $(".save").attr("disabled","disabled")
+            }else{
+                $(".checkBox").addClass("on");
+                $(".checkBox").attr("src","../static/img/checked.png");
+                $(".save").removeAttr("disabled")
+            }
+        });
         //协议弹窗
         $(".popup").click(function () {
             var name = $(this).attr("name");
@@ -234,7 +248,16 @@
                 },
                 success:function(data){
                     console.log(data)
-                    $('#success').fadeIn(1000);
+                    if(data.resultCode==="0"){
+                        $('#success').fadeIn(1000);
+                        $('#success .child').text("投保成功！");
+                    }else if(data.resultCode==="1") {
+                        $('#success').fadeIn(1000);
+                        $('#success .child').text("投保失败！");
+                    }else if(data.resultCode==="1"){
+                        $('#success').fadeIn(1000);
+                        $('#success .child').text("出单中");
+                    }
                     setTimeout(function () {
                         $('#success').fadeOut(1000);
                     },3000)

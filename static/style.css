@@ -37,7 +37,7 @@ button,input,select,textarea {
 button,input{
     border: none;
     background: transparent;
-    font-size: 18px;
+    font-size: 16px;
 }
 textarea {
     resize: none;
@@ -93,8 +93,12 @@ img {
 }
 /*  m-content  */
 .m-content .header{
-    text-align: center;
-    padding: 10px;
+    /*text-align: center;*/
+    padding: 15px 15px 15px 20px;
+    line-height: 22px;
+}
+.m-content .header h4{
+    display: inline;
 }
 .m-content .line{
     background-color: #eee;
@@ -104,20 +108,22 @@ img {
 .m-content .title{
     border-left: 5px solid #28C9BA;
     padding-left: 15px;
-    line-height: 24px;
-    padding-top: 4px;
+    line-height: 18px;
+    padding-top: 3px;
+    font-size: 14px;
 }
 .m-content .form{
-    padding: 10px 20px;
+    padding: 10px;
 }
 .m-content .row{
     line-height: 50px;
     border-bottom: 1px solid #eee;
+    padding-left: 10px;
 }
 .m-content .row div{
     float: left;
     line-height: 50px;
-    font-size: 18px;
+    font-size: 16px;
     width: 100px;
 }
 .m-content .userAgreement{
@@ -144,7 +150,9 @@ img {
     line-height: 46px;
     margin-top: 15px;
 }
-
+.m-content .save[disabled="disabled"]{
+    background: #eee;
+}
 /*弹窗*/
 .m-popup {
     position: relative;
@@ -239,5 +247,10 @@ img {
 .tips{
     font-size: 12px;
     color: red;
-    height: 14px;
+    height: 20px;
+    line-height: 20px;
+}
+.checkBox{
+    width: 20px;
+    margin-top: -2px;
 }
