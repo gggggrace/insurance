@@ -230,8 +230,9 @@
                 url: "https://backstage91160.implus100.com/service/answern/healthlowfee/insured",
                 async: true,
                 type: "POST",
+                contentType:"application/json;charset=utf-8",
                 dataType:"json",
-                data: {
+                data: JSON.stringify({
                     "orderId": orderId,
                     "productNum": "1",
                     "insureName": insureName,
@@ -245,7 +246,7 @@
                     "insuredCertNo": insureCertNo,
                     "insuredPhoneNo": insurePhoneNo,
                     "insuredMail":insureMail
-                },
+                }),
                 success:function(data){
                     console.log(data)
                     if(data.resultCode==="0"){
